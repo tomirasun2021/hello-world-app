@@ -1,0 +1,7 @@
+google_project_id       = "apt-diode-315422"
+google_bucket_name      = "tmiranda"
+deployment_environment  = "qa"
+deployment_name         = "hello-world"
+credentials             = "fuchicorp-service-account.json"
+deployment_image        = "docker.mirandaaws.com/hello-world-stage:97d664b"
+google_domain_name      = "mirandaaws.com"
