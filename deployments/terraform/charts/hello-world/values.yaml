@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
 # repository: docker.mirandaaws.com/hello-world-stage:97d664b
-  repository: docker.mirandaaws.com/hello-world-stage:271747c
+  repository: ${deployment_image}
   pullPolicy: IfNotPresent
 imagePullSecrets: []
 nameOverride: ""
@@ -19,13 +19,13 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: dev.hello.mirandaaws.com
+    - host: ${deployment_endpoint}
       paths: 
       - '/'
   tls: 
   - secretName: chart-example-tls
     hosts:
-      - dev.hello.mirandaaws.com
+      - ${deployment_endpoint}
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
